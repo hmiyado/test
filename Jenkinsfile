@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
+                sh 'gem install jekyll'
                 sh 'cd test'
                 sh 'jekyll build'
             }
