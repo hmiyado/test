@@ -1,9 +1,11 @@
 pipeline {
-    agent { docker { image 'ruby' } }
+    agent { docker { 
+        image 'jekyll/jekyll' 
+        args '-p 4000:4000'
+    } }
     stages {
         stage('build') {
             steps {
-                sh 'gem install jekyll'
                 sh 'cd test'
                 sh 'jekyll build'
             }
