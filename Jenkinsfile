@@ -11,7 +11,7 @@ pipeline {
         }
         stage('deploy') {
             steps {
-                sh 'jekyll serve'
+                sh 'jekyll serve --detach'
             }
         }
     }
