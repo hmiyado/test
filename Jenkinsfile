@@ -3,7 +3,15 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'ruby --version'
+                sh 'gem install jekyll'
+                sh 'jekyll new test'
+                sh 'cd test'
+                sh 'jekyll build'
+            }
+        }
+        stage('deploy') {
+            steps {
+                sh 'jekyll serve'
             }
         }
     }
